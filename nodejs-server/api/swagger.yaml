@@ -1,0 +1,27 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "fpl analyser"
+paths:
+  /players:
+    get:
+      description: "Gets `Player` objects.\n"
+      operationId: "playersGET"
+      parameters: []
+      responses:
+        200:
+          description: "Successful response"
+          schema:
+            type: "array"
+            title: "ArrayOfPersons"
+            items:
+              $ref: "#/definitions/Players"
+      x-swagger-router-controller: "Default"
+definitions:
+  Players:
+    properties:
+      name:
+        type: "string"
+      single:
+        type: "boolean"
